@@ -1,14 +1,5 @@
-import axios from 'axios';
+import Search from './models/Search';
 
-async function getResults(query) {
-  // const proxy = 'https://cors-anywhere.herokuapp.com/';
-  // const key = '';
-  try {
-    const res = await axios(`https://forkify-api.herokuapp.com/api/search?q=${query}`);
-    const recipes = res.data.recipes;
-    console.log(recipes);
-  } catch (error) {
-    alert(error);
-  }
-}
-getResults('curry');
+const search = new Search('pizza');
+console.log(search);
+search.getResults();
